@@ -1,5 +1,8 @@
 # V-OADRS
 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
+---
+
 ## Project Contributors
 
 1) [Saumil Shah](https://github.com/SaumilShah66)

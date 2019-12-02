@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot
+  name="measure_1">
+  <material name="Red">
+    <color rgba="${255/255} ${10/255} ${10/255} 1.0"/>
+</material>
+  <link name="world"/>
+
+  <link name="measure_1">
+    <inertial>
+      <origin
+        xyz="0.41512 -0.00999999999999997 0.41512"
+        rpy="0 0 0" />
+      <mass
+        value="2.1599" />
+      <inertia
+        ixx="0.040038"
+        ixy="-2.17174717717903E-18"
+        ixz="0.033168"
+        iyy="0.079932"
+        iyz="-3.0966222939695E-18"
+        izz="0.040038" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/measure_1_.STL" />
+      </geometry>
+      <!-- <material>Gazebo/Red</material> -->
+      <!-- <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material> -->
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/measure_1_.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+
+<joint name = "fix_joint" type = "fixed">
+    <parent link="world" />
+    <child link="measure_1" />
+</joint>
+
+
+
+<gazebo reference="measure_1">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+</robot>

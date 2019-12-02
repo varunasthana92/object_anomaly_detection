@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_rest">
+  <link
+    name="robot_rest">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="100.53" />
+      <inertia
+        ixx="6.367"
+        ixy="-3.2784E-32"
+        ixz="7.6788E-33"
+        iyy="2.0106"
+        iyz="2.6674375598959E-16"
+        izz="6.367" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/robot_rest.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/robot_rest.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

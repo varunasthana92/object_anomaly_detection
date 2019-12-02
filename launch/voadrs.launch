@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<launch>
+ 
+  <arg name="limited" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false" />
+  <arg name="sim" default="true" />
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- spwan ur5 -->
+  <!-- send robot urdf to param server -->
+
+
+
+
+
+  <include file="$(find ur_description)/launch/ur5_upload.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.9 -y 0.0 -x 0.0" respawn="false" output="screen" />
+
+  <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
+
+  <rosparam file="$(find ur_gazebo)/controller/arm_controller_ur5.yaml" command="load"/>
+
+  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn arm_controller" respawn="false" output="screen"/>
+
+
+  <!-- Remap follow_joint_trajectory -->
+
+  <remap if="$(arg sim)" from="/follow_joint_trajectory" to="/arm_controller/follow_joint_trajectory"/>
+
+  <!-- Launch moveit -->
+  <include file="$(find ur5_moveit_config)/launch/move_group.launch">
+    <arg name="limited" default="$(arg limited)"/>
+    <arg name="debug" default="$(arg debug)" />
+  </include>
+
+
+
+
+  <!-- spawn the table in gazebo -->
+ 
+
+  <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/table.urdf -urdf -model table -x 0.0 -y 0.0 -z 0.0" />
+
+	  <!-- spawn the robot_rest in gazebo -->
+
+  
+
+  <node name="spawn_part1" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/measure_1.urdf -urdf -model part1 -y 0.0 -x 0.0 -z 0.75 -R -1.57 -P 0.0 -Y -1.57" />
+
+  <node name="spawn_part2" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/measure_2.urdf -urdf -model part2 -y 0.0 -x 0.0 -z 0.75 -R -1.57 -P 0.0 -Y 1.57" />
+
+  <node name="spawn_part3" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/measure_3.urdf -urdf -model part3 -y 0.0 -x 0.0 -z 0.75 -R -1.57 -P 0.0 -Y 0.0" />
+
+ 
+  <node name="spawn_part4" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/measure_4.urdf -urdf -model part4 -y 0.0 -x 0.0 -z 0.75 -R -1.57 -P 0.0 -Y 3.14" />
+
+  <node name="spawn_robot_rest" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/robot_rest.urdf -urdf -model robot_rest -x 0.0 -y 0.0 -z 0.8" />
+
+</launch>

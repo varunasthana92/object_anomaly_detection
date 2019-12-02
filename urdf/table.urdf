@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="table">
+  <material name="Green">
+    <color rgba="${10/255} ${255/255} ${10/255} 1.0"/>
+  </material>
+  <link
+    name="table">
+    <inertial>
+      <origin
+        xyz="0 0 730"
+        rpy="0 0 0" />
+      <mass
+        value="107.17" />
+      <inertia
+        ixx="26.582"
+        ixy="4.3331E-16"
+        ixz="2.5479E-17"
+        iyy="40.175"
+        iyz="-2.84540370837538E-15"
+        izz="26.582" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/table.STL" />
+      </geometry>
+     <!--  <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+        <texture
+          filename="package://textures/" />
+      </material> -->
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://voadrs/meshes/table.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="table">
+    <material>Gazebo/Green</material>
+</gazebo>
+</robot>

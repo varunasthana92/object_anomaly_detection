@@ -12,7 +12,15 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
+  cv_bridge
+  image_transport
+  gazebo_msgs
+  std_srvs
+  message_generation
 )
+
+find_package( OpenCV REQUIRED )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -104,6 +112,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+   CATKIN_DEPENDS message_runtime
 #  INCLUDE_DIRS include
 #  LIBRARIES voadrs
 #  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs
@@ -119,6 +128,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -135,6 +145,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/voadrs_node.cpp)
+add_executable(cvImage src/image.cpp)
+add_executable(cvTest src/test.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,6 +162,16 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+target_link_libraries(cvImage
+   ${catkin_LIBRARIES}
+   ${OpenCV_LIBRARIES}
+ )
+target_link_libraries(cvTest
+   ${catkin_LIBRARIES}
+   ${OpenCV_LIBRARIES}
+ )
+
 
 #############
 ## Install ##

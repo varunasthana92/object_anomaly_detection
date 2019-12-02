@@ -162,6 +162,7 @@ add_executable(cvTest src/test.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
 target_link_libraries(cvImage
    ${catkin_LIBRARIES}
    ${OpenCV_LIBRARIES}
@@ -170,6 +171,7 @@ target_link_libraries(cvTest
    ${catkin_LIBRARIES}
    ${OpenCV_LIBRARIES}
  )
+
 
 #############
 ## Install ##

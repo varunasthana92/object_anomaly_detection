@@ -52,11 +52,7 @@ float DataReader::getPose(int jobNumber, int measurementNumber) {
 
 bool DataReader::checkDimentions(int jobNumber, int measurementNumber,
                                  float measuredDimention) {
-  ROS_INFO_STREAM(
-      "Expected measurement between: "
-          << limitations[jobNumber][measurementNumber][0]);
-  ROS_INFO_STREAM(
-      " and " << limitations[jobNumber][measurementNumber][1] << "\n");
+  
   // Checks if measured data is in tolerance range or not
   if (measuredDimention <= limitations[jobNumber][measurementNumber][0]
       && measuredDimention >= limitations[jobNumber][measurementNumber][1])

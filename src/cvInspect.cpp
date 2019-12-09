@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
             "Enter the job number to be checked (<=No. of Jobs on the table)\n");
         ROS_INFO_STREAM("Or else enter 0 to terminate the ternimal\n");
         ROS_INFO_STREAM(
-            "To exit gazebo, use Ctrl + C on the terminal used to launch the package.\n\nnUser Input: ");
+            "To exit gazebo, use Ctrl + C on the terminal used to launch the package.\n\nUser Input: ");
         std::cin >> jobNum;
         if (jobNum < 0 || jobNum > dr.getJobs()) {
           ROS_INFO_STREAM("Wrong input!!!!\nTry again...");

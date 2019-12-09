@@ -81,6 +81,13 @@ roslaunch voadrs measure.launch
 ```
 The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
 
+## Demo
+Robot as shown in imgae will be spawned and it will measure the dimentions of the holes.
+
+<p align="center">
+<img src="https://github.com/SaumilShah66/voadrs/results/Demo.png">
+</p>
+
 ## Doxygen Documentation
 The doxygen generated documents have been added to the docs folder of the repository. A config file named 'Doxyfile' has been added to generate the documentation. To generate the doxygen documentation, follow the steps below:
 ```
@@ -96,6 +103,15 @@ cd catkin_ws
 source devel/setup.bash
 catkin_make run_tests_voadrs
 ```
+
+## Cpplint and Cppcheck
+You can use the following command to check cpplint and cppcheck errors
+
+```
+cpplint $( find . -name \.hpp -or -name \.cpp | grep -vE -e "^./results" -e "^./test" -e "^./docs" )
+cppcheck $( find . -name \.hpp -or -name \.cpp | grep -vE -e "^./results" -e "^./test" -e "^./docs" )
+```
+
 
 ## Code Coverage
 ```

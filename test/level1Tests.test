@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="gui" default="false"/>
+    <arg name="rviz" default="false"/>
+    <arg name="Color" default="RB"/>
+
+    
+<!--     <include file="$(find iiwa_moveit)/launch/moveit_planning_execution.launch">
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="rviz" value="$(arg rviz)"/>
+        <arg name="Color" value= "$(arg Color)"/> 
+	</include> -->
+
+    <test pkg="voadrs" test-name="level1Tests" type="level1Tests"/>
+</launch>

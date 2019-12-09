@@ -1,6 +1,8 @@
 # V-OADRS
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Build Status](https://travis-ci.org/SaumilShah66/voadrs.svg?branch=master)](https://travis-ci.org/SaumilShah66/voadrs)
+[![Coverage Status](https://coveralls.io/repos/github/SaumilShah66/voadrs/badge.svg?branch=sprint3)](https://coveralls.io/github/SaumilShah66/voadrs?branch=sprint3)
 ---
 
 ## Project Contributors
@@ -32,9 +34,6 @@ Follow official ROS installation guidelines provided [here](http://wiki.ros.org/
 To install gazebo 7.0 follow [this](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=7.0&cat=install) instructions. 
 
 Install OpenCV 3.3.0 refer [this](https://medium.com/@Linh.NG/installing-opencv-3-3-0-on-ubuntu-16-04-lts-7db376f93961) page.
-
-
-## Technology Used
 
 ## Development Process
 Agile iterative process is being followed for project. The roles were divided into driver and navigator, which were shuffled as per tasks. You can find all iteration and products logs [here](https://docs.google.com/spreadsheets/d/1BnU5e_QEPwAU8ns-pFhITGS3_m1YnjaZeSdVSFJj3gg/edit#gid=0). Sprint planning and review notes are [here](https://docs.google.com/document/d/1KpbpapvvFNhO2NKPLEjOYNVf_a-0SManJHOhdiiNfMk/edit?usp=sharing).
@@ -74,3 +73,59 @@ cd catkin_ws
 source devel/setup.bash
 roslaunch voadrs voadrs.launch
 ```
+In second terminal
+```
+cd catkin_ws
+source deve/setup.bash
+roslaunch voadrs measure.launch
+```
+The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
+
+## Demo
+Robot as shown in imgae will be spawned and it will measure the dimentions of the holes.
+
+<p align="center">
+<img src="https://github.com/SaumilShah66/voadrs/results/Demo.png">
+</p>
+
+## Doxygen Documentation
+The doxygen generated documents have been added to the docs folder of the repository. A config file named 'Doxyfile' has been added to generate the documentation. To generate the doxygen documentation, follow the steps below:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/turtlebot_navigator/
+doxygen Doxyfile
+```
+## Presentation
+You can find the presentation of of this project at the link below.
+
+https://docs.google.com/presentation/d/1tPtoF0agk6jwrUVay_7XkGaMXW4imztTqSEKlOgopKw/edit?usp=sharing
+
+## Tests
+After you have build the project you can write following commands to run tests
+```
+cd catkin_ws
+source devel/setup.bash
+catkin_make run_tests_voadrs
+```
+
+## Cpplint and Cppcheck
+You can use the following command to check cpplint and cppcheck errors
+
+```
+cpplint $( find . -name \.hpp -or -name \.cpp | grep -vE -e "^./results" -e "^./test" -e "^./docs" )
+cppcheck $( find . -name \.hpp -or -name \.cpp | grep -vE -e "^./results" -e "^./test" -e "^./docs" )
+```
+
+
+## Code Coverage
+```
+cd ~/catkin_ws/build
+lcov --directory . --capture --output-file coverage.info
+lcov --list coverage.info
+```
+This will output the coverage of each file in the terminal. To create an html file for the same, run the following command:
+```
+genhtml coverage.info --output-directory covout
+```
+This will store the index.html file in the folder covout.

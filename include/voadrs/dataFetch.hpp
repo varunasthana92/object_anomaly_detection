@@ -1,6 +1,7 @@
 /**
- * @file listener.cpp
- * @brief subscriber for First Publisher/Subscriber ros package
+ * @file dataFetch.cpp
+ * @brief parent class for job data read from a txt file. Individual implementation
+ *        of functions defined by derived classes.
  * @author Varun Asthana
  * @author Saumil Shah
  *
@@ -34,17 +35,26 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#include "ros/ros.h"
-#include "std_msgs/String.h"
+#ifndef _INCLUDE_DATAFETCH_HPP_
+#define _INCLUDE_DATAFETCH_HPP_
 
-class Scan {
-   private:
-      ros::NodeHandle n;
-      //auto sub = n.subscribe(TO BE DEFINED);
-   public:
-      void subCallback(const std_msgs::float64::ConstPtr &msg);
-      int getData(int &);
-      float diaCalc();
-}
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
 
-
+class DataFetch {
+ public:
+  virtual int readAllData(std::string filePath) = 0;
+  virtual int getNumberOfMeasurements(int jobNumber) = 0;
+  virtual float getPose(int jobNumber, int measurementNumber) = 0;
+  virtual int getJobs() = 0;
+ protected:
+  std::vector<std::vector<float>> angles;  // vector of anglesfor onejob for all jobs
+  std::vector<std::vector<std::vector<float>>> limitations;  // vector of limitationForJob for all jobs
+  std::vector<std::string> jobNames;
+  int noOfMeasurements = 0;
+  int numOfJobs = 0;
+  std::ifstream myReadFile;
+};
+#endif  /* _INCLUDE_DATAFETCH_HPP_ */

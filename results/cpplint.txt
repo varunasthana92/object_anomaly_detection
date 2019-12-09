@@ -1,0 +1,11 @@
+Done processing ./src/dataReader.cpp
+Done processing ./src/cvInspect.cpp
+Done processing ./src/imageConvert.cpp
+Done processing ./src/moveRobot.cpp
+Done processing ./src/circle.cpp
+Done processing ./include/voadrs/dataReader.hpp
+Done processing ./include/voadrs/imageConvert.hpp
+Done processing ./include/voadrs/circle.hpp
+Done processing ./include/voadrs/moveRobot.hpp
+Done processing ./include/voadrs/dataFetch.hpp
+Total errors found: 18

@@ -6,6 +6,7 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false" />
   <arg name="sim" default="true" />
+  <arg name="reference_data_file_path" default="$(find voadrs)/src/measure.txt"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -17,18 +18,12 @@
   <!-- spwan ur5 -->
   <!-- send robot urdf to param server -->
 
-
-
-
-
   <include file="$(find ur_description)/launch/ur5_upload.launch">
     <arg name="limited" value="$(arg limited)"/>
   </include>
 
-
-
   <!-- push robot_description to factory and spawn robot in gazebo -->
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.9 -y 0.0 -x 0.0" respawn="false" output="screen" />
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.83 -y 0.0 -x 0.0" respawn="false" output="screen" />
 
   <include file="$(find ur_gazebo)/launch/controller_utils.launch"/>
 
@@ -68,6 +63,10 @@
  
   <node name="spawn_part4" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/measure_4.urdf -urdf -model part4 -y 0.0 -x 0.0 -z 0.75 -R -1.57 -P 0.0 -Y 3.14" />
 
-  <node name="spawn_robot_rest" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/robot_rest.urdf -urdf -model robot_rest -x 0.0 -y 0.0 -z 0.8" />
+  <node name="spawn_robot_rest" pkg="gazebo_ros" type="spawn_model" args="-file $(find voadrs)/urdf/robot_rest.urdf -urdf -model robot_rest -x 0.0 -y 0.0 -z 0.75" />
 
+  <!-- <node pkg="voadrs" type="cvInspect" name="cvInspect" launch-prefix="gnome-terminal command" >
+     <param name="filePath" value ="$(arg reference_data_file_path)" />
+  </node>
+ -->
 </launch>

@@ -89,6 +89,13 @@ source devel/setup.bash
 cd src/turtlebot_navigator/
 doxygen Doxyfile
 ```
+## Tests
+After you have build the project you can write following commands to run tests
+```
+cd catkin_ws
+source devel/setup.bash
+catkin_make run_tests_voadrs
+```
 
 ## Code Coverage
 ```

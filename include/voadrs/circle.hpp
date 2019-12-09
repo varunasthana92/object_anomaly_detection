@@ -37,11 +37,11 @@
 #ifndef _INCLUDE_CIRCLE_HPP_
 #define _INCLUDE_CIRCLE_HPP_
 
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 #include <string>
 #include <vector>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
 class Circle {
  private:

@@ -45,11 +45,10 @@
 
 class DataFetch {
  public:
-  virtual int readAllData(std::string filePath)=0;
-  virtual int getNumberOfMeasurements(int jobNumber)=0;
-  virtual float getPose(int jobNumber, int measurementNumber)=0;
-  virtual int getJobs()=0;
-
+  virtual int readAllData(std::string filePath) = 0;
+  virtual int getNumberOfMeasurements(int jobNumber) = 0;
+  virtual float getPose(int jobNumber, int measurementNumber) = 0;
+  virtual int getJobs() = 0;
  protected:
   std::vector<std::vector<float>> angles;  // vector of anglesfor onejob for all jobs
   std::vector<std::vector<std::vector<float>>> limitations;  // vector of limitationForJob for all jobs

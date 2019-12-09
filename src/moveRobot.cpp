@@ -34,9 +34,10 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
+#include <ros/time.h>
 #include <ros/ros.h>
 #include <trajectory_msgs/JointTrajectory.h>
-#include "ros/time.h"
 #include "moveRobot.hpp"
 
 // Destructor of class
@@ -85,5 +86,5 @@ MoveRobot::MoveRobot() {
   traj.joint_names[3] = "wrist_1_joint";
   traj.joint_names[4] = "wrist_2_joint";
   traj.joint_names[5] = "wrist_3_joint";
-  setDefaultPoint (&traj);  // Set default joint values
+  setDefaultPoint(&traj);  // Set default joint values
 }

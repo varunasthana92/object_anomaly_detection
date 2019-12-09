@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/SaumilShah66/voadrs.svg?branch=master)](https://travis-ci.org/SaumilShah66/voadrs)
-[![Coverage Status](https://coveralls.io/repos/github/SaumilShah66/voadrs/badge.svg?branch=sprint3)](https://coveralls.io/github/SaumilShah66/voadrs?branch=sprint3)
+[![Coverage Status](https://coveralls.io/repos/github/SaumilShah66/voadrs/badge.svg?branch=master)](https://coveralls.io/github/SaumilShah66/voadrs?branch=master)
 ---
 
 ## Project Contributors
@@ -54,10 +54,11 @@ sudo apt-get install ros-kinetic-universal-robots
 git clone https://github.com/ros-industrial/universal_robot
 git clone https://github.com/SaumilShah66/voadrs
 ```
-Official Universal Robot package does not have a camera mounted on it. We have uploaded a modified URDF file with USB camera to this repository and you need to replace official file with the one provided here.
+Official Universal Robot package does not have a camera mounted on it. We have uploaded a modified URDF file with USB camera to this repository and you need to replace official file with the one provided here or you can manually replace those files.
 ```
 cp voadrs/urdf/ur5.urdf.xacro universal_robot/ur_description/urdf/
 cp voadrs/urdf/common.gazebo.xacro universal_robot/ur_description/urdf/
+cp voadrs/urdf/ur5_joint_limited_robot.urdf.xacro universal_robot/ur_description/urdf/
 ```
 Now you are ready to build this package. Use following command to build. Make sure you are in your workspace
 ```
@@ -85,7 +86,7 @@ The second launch file will ask you which job you want to measure and it will mo
 Robot as shown in imgae will be spawned and it will measure the dimentions of the holes.
 
 <p align="center">
-<img src="https://github.com/SaumilShah66/voadrs/results/Demo.png">
+<img src="https://github.com/SaumilShah66/voadrs/blob/master/results/Demo.png">
 </p>
 
 ## Doxygen Documentation

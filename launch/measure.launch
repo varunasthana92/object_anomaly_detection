@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+ 
+  <arg name="reference_data_file_path" default="$(find voadrs)/src/measure.txt"/>
+
+  <node pkg="voadrs" type="cvInspect" name="cvInspect" launch-prefix="gnome-terminal --command" >
+     <param name="filePath" value ="$(arg reference_data_file_path)" />
+  </node>
+
+</launch>

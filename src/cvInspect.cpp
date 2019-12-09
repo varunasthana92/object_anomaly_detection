@@ -39,11 +39,11 @@
 #include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 #include <string>
 #include <vector>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include "imageConvert.hpp"
 #include "circle.hpp"
 #include "dataReader.hpp"
@@ -63,11 +63,9 @@ int main(int argc, char **argv) {
     return 0;
   }
   ImageConvert ic;
-  //Compare comp;
   Circle circ;
   cv::Mat image;
   DataReader dr;
-  //basePtr= &dr;
   static const std::string OPENCV_WINDOW = "Image window";
   cv::namedWindow(OPENCV_WINDOW);
 

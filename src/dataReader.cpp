@@ -52,8 +52,9 @@ float DataReader::getPose(int jobNumber, int measurementNumber) {
 
 bool DataReader::checkDimentions(int jobNumber, int measurementNumber,
                                  float measuredDimention) {
-  
-  // Checks if measured data is in tolerance range or not
+  /** Checks if measured data is in
+    * tolerance range or not
+    **/
   if (measuredDimention <= limitations[jobNumber][measurementNumber][0]
       && measuredDimention >= limitations[jobNumber][measurementNumber][1])
     return true;
@@ -69,7 +70,7 @@ int DataReader::readAllData(std::string filePath) {
       getline(myReadFile, line);	// Get the next line from file
       if (line[0] == 35) {  // ASCII value of # --- Find #
         std::vector<std::vector<float>> limitationsForJob;  /// Maximum and minimum for one job
-        std::vector<float> anglesForJob;  //angles for one job
+        std::vector<float> anglesForJob;  // angles for one job
         numOfJobs++;
         // Job name is before " : " --- read that
         jobNames.push_back(line.substr(1, line.find(":") - 1));
@@ -102,8 +103,8 @@ int DataReader::readAllData(std::string filePath) {
           }
           ++i;
         }
-        limitations.push_back(limitationsForJob);  // Add tolerances into container			
-        angles.push_back(anglesForJob);  // Add angles into containers			    	
+        limitations.push_back(limitationsForJob);  // Add tolerances into container
+        angles.push_back(anglesForJob);  // Add angles into containers
       }
     }
     return 1;

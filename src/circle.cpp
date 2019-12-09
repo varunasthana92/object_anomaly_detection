@@ -34,11 +34,12 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
+
 #include <iostream>
 #include <string>
 #include <vector>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include "circle.hpp"
 
 int Circle::readImage(cv::Mat &img) {
@@ -56,7 +57,7 @@ int Circle::detCircle() {
   GaussianBlur(gray, gray, cv::Size(9, 9), 2, 2);
   // Hough classifier to detect circles
   HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, 2, 200, 35, 0, 0);
-  cv::Point center(cvRound (circles[0][0]), cvRound (circles[0][1]));
+  cv::Point center(cvRound(circles[0][0]), cvRound(circles[0][1]));
   int radius = cvRound(circles[0][2]);
   rad.push_back(circles[0][2]);
   // circle center

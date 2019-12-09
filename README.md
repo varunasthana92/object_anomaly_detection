@@ -96,6 +96,11 @@ source devel/setup.bash
 cd src/turtlebot_navigator/
 doxygen Doxyfile
 ```
+## Presentation
+You can find the presentation of of this project at the link below.
+
+https://docs.google.com/presentation/d/1tPtoF0agk6jwrUVay_7XkGaMXW4imztTqSEKlOgopKw/edit?usp=sharing
+
 ## Tests
 After you have build the project you can write following commands to run tests
 ```

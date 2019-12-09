@@ -35,9 +35,6 @@ To install gazebo 7.0 follow [this](http://gazebosim.org/tutorials?tut=install_u
 
 Install OpenCV 3.3.0 refer [this](https://medium.com/@Linh.NG/installing-opencv-3-3-0-on-ubuntu-16-04-lts-7db376f93961) page.
 
-
-## Technology Used
-
 ## Development Process
 Agile iterative process is being followed for project. The roles were divided into driver and navigator, which were shuffled as per tasks. You can find all iteration and products logs [here](https://docs.google.com/spreadsheets/d/1BnU5e_QEPwAU8ns-pFhITGS3_m1YnjaZeSdVSFJj3gg/edit#gid=0). Sprint planning and review notes are [here](https://docs.google.com/document/d/1KpbpapvvFNhO2NKPLEjOYNVf_a-0SManJHOhdiiNfMk/edit?usp=sharing).
 

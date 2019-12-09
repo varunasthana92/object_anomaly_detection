@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/SaumilShah66/voadrs.svg?branch=master)](https://travis-ci.org/SaumilShah66/voadrs)
+[![Coverage Status](https://coveralls.io/repos/github/SaumilShah66/voadrs/badge.svg?branch=sprint3)](https://coveralls.io/github/SaumilShah66/voadrs?branch=sprint3)
 ---
 
 ## Project Contributors

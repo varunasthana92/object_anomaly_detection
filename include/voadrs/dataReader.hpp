@@ -44,45 +44,45 @@
 #include<vector>
 #include<dataFetch.hpp>
 
+class DataReader : public DataFetch {
+ public:
+  /**
+   * @brief This method reads all the data from text file and saves it into vectors
+   * @param filePath of type string
+   * @return 1 if read successfully else 0
+   */
+  int readAllData(std::string filePath);
 
-class DataReader: public DataFetch {
-public:
-	/**
-	 * @brief This method reads all the data from text file and saves it into vectors
-	 * @param filePath of type string
-	 * @return 1 if read successfully else 0  
-	 */
-	int readAllData(std::string filePath);
-	
-	/**
-	 * @brief This method gives the number of measurements for a given job number
-	 * @param jobNumber of type int
-	 * @return 1 if read successfully else 0  
-	 */
-	int getNumberOfMeasurements(int jobNumber);
+  /**
+   * @brief This method gives the number of measurements for a given job number
+   * @param jobNumber of type int
+   * @return 1 if read successfully else 0
+   */
+  int getNumberOfMeasurements(int jobNumber);
 
-	/**
-	 * @brief This method gives the position where measurement need to be taken
-	 * @param jobNumber of type int 
-	 * @param measurementNumber of type int
-	 * @return Angle in degrees read from file of type float
-	 */
-	float getPose(int jobNumber, int measurementNumber);
+  /**
+   * @brief This method gives the position where measurement need to be taken
+   * @param jobNumber of type int
+   * @param measurementNumber of type int
+   * @return Angle in degrees read from file of type float
+   */
+  float getPose(int jobNumber, int measurementNumber);
 
-	/**
-	 * @brief Method gives the number of jobs available
-	 * @param none
-	 * @return Number of jobs of type int
-	 */
-	int getJobs();
+  /**
+   * @brief Method gives the number of jobs available
+   * @param none
+   * @return Number of jobs of type int
+   */
+  int getJobs();
 
-	/**
-	 * @brief Method checks if the measured dimention is in tolerance range or not
-	 * @param jobNumber of type int
-	 * @param measurementNumber of type int
-	 * @param measuredDimention of type float
-	 * @return true if dimention is in tolerance zone and false otherwise
-	 */
-	bool checkDimentions(int jobNumber, int measurementNumber, float measuredDimention);
+  /**
+   * @brief Method checks if the measured dimention is in tolerance range or not
+   * @param jobNumber of type int
+   * @param measurementNumber of type int
+   * @param measuredDimention of type float
+   * @return true if dimention is in tolerance zone and false otherwise
+   */
+  bool checkDimentions(int jobNumber, int measurementNumber,
+                       float measuredDimention);
 };
 #endif  /* _INCLUDE_DATAREADER_HPP_ */

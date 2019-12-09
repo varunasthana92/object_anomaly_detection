@@ -45,9 +45,9 @@
 
 class Circle {
  private:
-  cv::Mat image;  /**< variable to hold image input */
-  cv::Mat gray;  /**< variable to hold converted grayscale image */
-  std::vector<cv::Vec3f> circles;  /**< variable to data for all detected circles in an image */
+  cv::Mat image; /**< variable to hold image input */
+  cv::Mat gray; /**< variable to hold converted grayscale image */
+  std::vector<cv::Vec3f> circles; /**< variable to data for all detected circles in an image */
   std::vector<float> rad;
 
  public:

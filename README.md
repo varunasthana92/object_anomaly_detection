@@ -76,3 +76,31 @@ cd catkin_ws
 source devel/setup.bash
 roslaunch voadrs voadrs.launch
 ```
+In second terminal
+```
+cd catkin_ws
+source deve/setup.bash
+roslaunch voadrs measure.launch
+```
+The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
+
+## Doxygen Documentation
+The doxygen generated documents have been added to the docs folder of the repository. A config file named 'Doxyfile' has been added to generate the documentation. To generate the doxygen documentation, follow the steps below:
+```
+cd ~/catkin_ws/
+source devel/setup.bash
+cd src/turtlebot_navigator/
+doxygen Doxyfile
+```
+
+## Code Coverage
+```
+cd ~/catkin_ws/build
+lcov --directory . --capture --output-file coverage.info
+lcov --list coverage.info
+```
+This will output the coverage of each file in the terminal. To create an html file for the same, run the following command:
+```
+genhtml coverage.info --output-directory covout
+```
+This will store the index.html file in the folder covout.

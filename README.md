@@ -77,7 +77,7 @@ roslaunch voadrs voadrs.launch
 In second terminal
 ```
 cd catkin_ws
-source deve/setup.bash
+source devel/setup.bash
 roslaunch voadrs measure.launch
 ```
 The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
@@ -94,7 +94,7 @@ The doxygen generated documents have been added to the docs folder of the reposi
 ```
 cd ~/catkin_ws/
 source devel/setup.bash
-cd src/turtlebot_navigator/
+cd src/voadrs/
 doxygen Doxyfile
 ```
 ## Presentation

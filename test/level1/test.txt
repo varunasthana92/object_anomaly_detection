@@ -1,0 +1,33 @@
+# Job 1 : measurements = 4
+Measurement : 1
+angle : 30
+(Dmax Dmin) : ( 50 , 40 ) 
+Measurement : 2
+angle : 45
+(Dmax Dmin) : ( 51 , 49 )
+Measurement : 3
+angle : 60
+(Dmax Dmin) : ( 51 , 49 )
+Measurement : 4
+angle : 60
+(Dmax Dmin) : ( 51 , 49 )
+
+# Job 2 : measurements = 2
+Measurement : 1
+angle : 120
+(Dmax Dmin) : ( 51.5 , 49 ) 
+Measurement : 2
+angle : 135
+(Dmax Dmin) : ( 51 , 49 )
+
+# Job 3 : measurements = 3
+Measurement : 1
+angle : 210
+(Dmax Dmin) : ( 51 , 49 ) 
+Measurement : 2
+angle : 225
+(Dmax Dmin) : ( 51 , 49 )
+Measurement : 3
+angle : 240
+(Dmax Dmin) : ( 51 , 49 )
+

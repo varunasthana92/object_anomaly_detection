@@ -41,42 +41,40 @@
 #include <vector>
 #include "circle.hpp"
 
-int Circle::readImage(cv::Mat &img){  
-    image = img;  // Set the values to class variable
-    return 1;
+int Circle::readImage(cv::Mat &img) {
+  image = img;  // Set the values to class variable
+  return 1;
 }
 
-int Circle::c2g(){
-    cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);  // Convert to gray scale image
-    return 1;
+int Circle::c2g() {
+  cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);  // Convert to gray scale image
+  return 1;
 }
 
 int Circle::detCircle() {
-    // Add gaussian filter to smooth the image. Necessary to tackle noise
-    GaussianBlur(gray, gray, cv::Size(9, 9), 2, 2);
-    // Hough classifier to detect circles
-    HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, 2, 200, 35,
-                 0, 0);
-    cv::Point center(cvRound(circles[0][0]), cvRound(circles[0][1]));
-    int radius = cvRound(circles[0][2]);
-    rad.push_back(circles[0][2]);
-    // circle center
-    cv::circle(image, center, 3, cv::Scalar(10, 255, 128), -1, 8, 0);
-    // circle outline
-    cv::circle(image, center, radius, cv::Scalar(255, 0, 126), 2, 8, 0);
-    return 1;
-}
-  
-int Circle::getImg(cv::Mat &img){
-    img = image;
-    return 1;
+  // Add gaussian filter to smooth the image. Necessary to tackle noise
+  GaussianBlur(gray, gray, cv::Size(9, 9), 2, 2);
+  // Hough classifier to detect circles
+  HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1, 2, 200, 35, 0, 0);
+  cv::Point center(cvRound (circles[0][0]), cvRound (circles[0][1]));
+  int radius = cvRound(circles[0][2]);
+  rad.push_back(circles[0][2]);
+  // circle center
+  cv::circle(image, center, 3, cv::Scalar(10, 255, 128), -1, 8, 0);
+  // circle outline
+  cv::circle(image, center, radius, cv::Scalar(255, 0, 126), 2, 8, 0);
+  return 1;
 }
 
-std::vector<float> Circle::getData(){
-    return rad;  
+int Circle::getImg(cv::Mat &img) {
+  img = image;
+  return 1;
+}
+
+std::vector<float> Circle::getData() {
+  return rad;
 }
 
 Circle::~Circle() {
 }
-
 

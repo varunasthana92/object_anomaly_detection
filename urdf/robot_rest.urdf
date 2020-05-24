@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/robot_rest.STL" />
+          filename="package://object_anomaly_detection/meshes/robot_rest.STL" />
       </geometry>
     </visual>
     <collision>
@@ -35,7 +35,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/robot_rest.STL" />
+          filename="package://object_anomaly_detection/meshes/robot_rest.STL" />
       </geometry>
     </collision>
   </link>

@@ -29,7 +29,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/table.STL" />
+          filename="package://object_anomaly_detection/meshes/table.STL" />
       </geometry>
      <!--  <material
         name="">
@@ -45,7 +45,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/table.STL" />
+          filename="package://object_anomaly_detection/meshes/table.STL" />
       </geometry>
     </collision>
   </link>

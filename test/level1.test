@@ -3,8 +3,8 @@
     <arg name="gui" default="false"/>
     <arg name="rviz" default="false"/>
     <arg name="Color" default="RB"/>
-    <arg name="testfile" default="$(find voadrs)/test/test.txt"/>
+    <arg name="testfile" default="$(find object_anomaly_detection)/test/test.txt"/>
     
-    <test pkg="voadrs" test-name="allTests" type="allTests" args="$(arg testfile)"/>
+    <test pkg="object_anomaly_detection" test-name="allTests" type="allTests" args="$(arg testfile)"/>
 
 </launch>

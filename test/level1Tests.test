@@ -11,5 +11,5 @@
         <arg name="Color" value= "$(arg Color)"/> 
 	</include> -->
 
-    <test pkg="voadrs" test-name="level1Tests" type="level1Tests"/>
+    <test pkg="object_anomaly_detection" test-name="level1Tests" type="level1Tests"/>
 </launch>

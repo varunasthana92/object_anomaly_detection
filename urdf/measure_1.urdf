@@ -31,7 +31,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_1_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_1_.STL" />
       </geometry>
       <!-- <material>Gazebo/Red</material> -->
       <!-- <material
@@ -46,7 +46,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_1_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_1_.STL" />
       </geometry>
     </collision>
   </link>

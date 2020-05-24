@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="reference_data_file_path" default="$(find voadrs)/test/level2/demoImg.png"/>
+  <arg name="reference_data_file_path" default="$(find object_anomaly_detection)/test/level2/demoImg.png"/>
 
-  <node pkg="voadrs" type="cvTest" name="cvTest">
+  <node pkg="object_anomaly_detection" type="cvTest" name="cvTest">
      <param name="filePath" value ="$(arg reference_data_file_path)" />
   </node>
 
 
-    <test pkg="voadrs" test-name="level2Tests" type="level2Tests"/>
+    <test pkg="object_anomaly_detection" test-name="level2Tests" type="level2Tests"/>
 </launch>

@@ -30,7 +30,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_4_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_4_.STL" />
       </geometry>
       <color rbga="0.79216 0.81961 0.93333 1" />
      <!--  <material
@@ -38,7 +38,7 @@
         <color
           rgba="0.79216 0.81961 0.93333 1" />
         <texture
-          filename="package://voadrs/textures/" />
+          filename="package://object_anomaly_detection/textures/" />
       </material> -->
     </visual>
     <collision>
@@ -47,7 +47,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_4_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_4_.STL" />
       </geometry>
     </collision>
   </link>

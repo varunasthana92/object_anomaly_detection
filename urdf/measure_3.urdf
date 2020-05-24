@@ -30,7 +30,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_3_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_3_.STL" />
       </geometry>
     </visual>
     <collision>
@@ -39,7 +39,7 @@
         rpy="1.57 0 0" />
       <geometry>
         <mesh
-          filename="package://voadrs/meshes/measure_3_.STL" />
+          filename="package://object_anomaly_detection/meshes/measure_3_.STL" />
       </geometry>
     </collision>
 </link>

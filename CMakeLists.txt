@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(voadrs)
+project(object_anomaly_detection)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -27,7 +27,7 @@ catkin_package(
 )
 
 include_directories(
-  include/voadrs
+  include/object_anomaly_detection
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
 )

@@ -1,4 +1,4 @@
-# V-OADRS
+# Vision Based Object Anomoly Detection System (V-OADRS)
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-green.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/SaumilShah66/voadrs.svg?branch=master)](https://travis-ci.org/SaumilShah66/voadrs)
@@ -52,17 +52,17 @@ Now if you are present in src directory, you need to clone the official ROS-Indu
 ```
 sudo apt-get install ros-kinetic-universal-robots
 git clone https://github.com/ros-industrial/universal_robot
-git clone https://github.com/SaumilShah66/voadrs
+git clone https://github.com/varunasthana92/object_anomaly_detection.git
 ```
 Official Universal Robot package does not have a camera mounted on it. We have uploaded a modified URDF file with USB camera to this repository and you need to replace official file with the one provided here or you can manually replace those files.
 ```
-cp voadrs/urdf/ur5.urdf.xacro universal_robot/ur_description/urdf/
-cp voadrs/urdf/common.gazebo.xacro universal_robot/ur_description/urdf/
-cp voadrs/urdf/ur5_joint_limited_robot.urdf.xacro universal_robot/ur_description/urdf/
+cp object_anomaly_detection/urdf/ur5.urdf.xacro universal_robot/ur_description/urdf/
+cp object_anomaly_detection/urdf/common.gazebo.xacro universal_robot/ur_description/urdf/
+cp object_anomaly_detection/urdf/ur5_joint_limited_robot.urdf.xacro universal_robot/ur_description/urdf/
 ```
 Now you are ready to build this package. Use following command to build. Make sure you are in your workspace
 ```
-cd catkin_ws
+cd ..
 catkin_make
 ```
 
@@ -72,13 +72,13 @@ You can use following command to launch a demo. This will start a gazebo with ro
 ```
 cd catkin_ws
 source devel/setup.bash
-roslaunch voadrs voadrs.launch
+roslaunch object_anomaly_detection voadrs.launch
 ```
 In second terminal
 ```
 cd catkin_ws
 source devel/setup.bash
-roslaunch voadrs measure.launch
+roslaunch object_anomaly_detection measure.launch
 ```
 The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
 
@@ -86,7 +86,7 @@ The second launch file will ask you which job you want to measure and it will mo
 Robot as shown in imgae will be spawned and it will measure the dimentions of the holes.
 
 <p align="center">
-<img src="https://github.com/SaumilShah66/voadrs/blob/master/results/Demo.png">
+<img src="https://github.com/varunasthana92/object_anomaly_detection/blob/master/results/Demo.png">
 </p>
 
 ## Doxygen Documentation
@@ -94,7 +94,7 @@ The doxygen generated documents have been added to the docs folder of the reposi
 ```
 cd ~/catkin_ws/
 source devel/setup.bash
-cd src/voadrs/
+cd src/object_anomaly_detection/
 doxygen Doxyfile
 ```
 ## Presentation
@@ -107,7 +107,7 @@ After you have build the project you can write following commands to run tests
 ```
 cd catkin_ws
 source devel/setup.bash
-catkin_make run_tests_voadrs
+catkin_make run_tests_object_anomaly_detection
 ```
 
 ## Cpplint and Cppcheck

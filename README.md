@@ -5,18 +5,15 @@
 [![Coverage Status](https://coveralls.io/repos/github/varunasthana92/object_anomaly_detection/badge.svg?branch=master)](https://coveralls.io/github/varunasthana92/object_anomaly_detection?branch=master)
 ---
 
-## Project Contributors
-
-1) [Saumil Shah](https://github.com/SaumilShah66)
-Mechanical Engineer, Innovator, Robotics Graduate Student at UMD. 
-
-2) [Varun Asthana](https://github.com/varunasthana92)
-Mechanical Engineer, Innovator, Robotics Graduate Student at UMD. 
-
 ## Overview
 
 V-OADRS stands for Vision-based Object Anomaly Detection Robotic System, a special purpose robotic system designed for Acme Robotics, for their future product line. With the changing trend in manufacturing industries for theadoption of autonomous processes, the V-OADRS system can fill the gaps for autonomous inspection toachieve desired quality standards. This robotic system is mainly designed for plastic product manufacturing industries. V-OADRS will scan and inspect the object placed in the defined workspace of the robot, on an assumedwell-defined inspection location or fixture, for proper relative orientation of an object with respect to thearm manipulator (having a scanner mounted on it).
- The system can be programmed to detect any user-defined anomaly (based on the quality needs).  For demonstration, we will detect the presence of a definednumber of holes and their diameters as a quality checkpoint on an object.V-OADRS will generate an output highlighting the number of holes detected and the diameter of each.It will also tell if the diameter of the holes is in the (predefined) acceptable range or not.
+
+<p align="center">
+<img src="https://github.com/varunasthana92/object_anomaly_detection/blob/master/results/object_anomaly.gif">
+</p>
+
+The system can be programmed to detect any user-defined anomaly (based on the quality needs).  For demonstration, we will detect the presence of a definednumber of holes and their diameters as a quality checkpoint on an object.V-OADRS will generate an output highlighting the number of holes detected and the diameter of each.It will also tell if the diameter of the holes is in the (predefined) acceptable range or not.
 
 ## Dependencies
 
@@ -82,12 +79,13 @@ roslaunch object_anomaly_detection measure.launch
 ```
 The second launch file will ask you which job you want to measure and it will move the robot to that position to measure the dimention of hole.
 
-## Demo
-Robot as shown in imgae will be spawned and it will measure the dimentions of the holes.
+## Demo Links
 
-<p align="center">
-<img src="https://github.com/varunasthana92/object_anomaly_detection/blob/master/results/Demo.png">
-</p>
+Click [here](https://www.youtube.com/watch?v=xiTwMtg6cR0&feature=youtu.be) to watch the complete instruction video on how to run this project.
+
+```
+https://www.youtube.com/watch?v=xiTwMtg6cR0&feature=youtu.be
+```
 
 ## Doxygen Documentation
 The doxygen generated documents have been added to the docs folder of the repository. A config file named 'Doxyfile' has been added to generate the documentation. To generate the doxygen documentation, follow the steps below:
@@ -130,3 +128,11 @@ This will output the coverage of each file in the terminal. To create an html fi
 genhtml coverage.info --output-directory covout
 ```
 This will store the index.html file in the folder covout.
+
+## Project Contributors
+
+1) [Varun Asthana](https://github.com/varunasthana92)
+Mechanical Engineer, Robotics Graduate Student at UMD.
+
+2) [Saumil Shah](https://github.com/SaumilShah66)
+Mechanical Engineer, Robotics Graduate Student at UMD.
